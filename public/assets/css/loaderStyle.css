@@ -1,0 +1,107 @@
+.box{
+	display: flex;
+    height: 200px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+	width: 90%;
+	/*margin:0 -4px -5px -2px;*/
+	transition: all .2s ease;
+}
+
+
+/* -------------- loader3 -------------- */
+
+.loader3{
+	position: relative;
+	width: 100%;
+	height: 20px;
+}
+
+.loader3:after{
+	content: "SHIPMENT STATUS: IN TRANSIT...";
+	color: rgb(12, 11, 11);
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-weight: 200;
+	font-size: 16px;
+	position: absolute;
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+	left: 0;
+	top: 0;
+	background-color: rgb(221,221,221);
+	z-index: 1;
+}
+
+.loader3:before{
+	content: "";
+	position: absolute;
+	background-color: rgb(20,36,64);
+	top: -5px;
+	left: 0px;
+	height: 30px;
+	width: 0px;
+	z-index: 0;
+	opacity: 1;
+	-webkit-transform-origin:  100% 0%;
+			transform-origin:  100% 0% ;
+	-webkit-animation: loader3 10s ease-in-out infinite;
+			animation: loader3 10s ease-in-out infinite;
+}
+
+
+
+@-webkit-keyframes loader3{
+    0%{width: 0px;}
+    70%{width: 100%; opacity: 1;}
+    90%{opacity: 0; width: 100%;}
+    100%{opacity: 0;width: 0px;}
+}
+
+@keyframes loader3{
+    0%{width: 0px;}
+    70%{width: 100%; opacity: 1;}
+    90%{opacity: 0; width: 100%;}
+    100%{opacity: 0;width: 0px;}
+}
+
+
+
+
+
+
+
+
+
+/* MEDIA QUERIES */
+@media (max-width: 700px){
+	.box{
+		width: 50%;
+	}
+
+	.box:nth-child(2n-1){
+		background-color: inherit;
+	}
+
+	.box:nth-child(4n),.box:nth-child(4n-3) {
+		background-color: rgba(0,0,0,0.05);
+	}
+
+}
+
+@media (max-width: 420px){
+	.box{
+		width: 100%;
+	}
+
+	.box:nth-child(4n),.box:nth-child(4n-3){
+		background-color: inherit;
+	}
+
+	.box:nth-child(2n-1){
+		background-color:rgba(0,0,0,0.05);
+	}
+
+}
